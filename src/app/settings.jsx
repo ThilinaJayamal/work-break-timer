@@ -1,5 +1,3 @@
-// screens/Settings.js
-
 import { View, Text, Pressable, StyleSheet } from 'react-native';
 import React, { useContext } from 'react';
 import { TimeContext } from '../context/TimerContext';

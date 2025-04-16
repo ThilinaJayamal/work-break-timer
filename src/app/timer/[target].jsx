@@ -4,11 +4,15 @@ import { router, useFocusEffect, useLocalSearchParams } from 'expo-router'
 import { AnimatedCircularProgress } from 'react-native-circular-progress';
 import { Audio } from 'expo-av';
 import { TimeContext } from '../../context/TimerContext';
+import { useKeepAwake } from 'expo-keep-awake';
 
 const Timer = () => {
+
+  useKeepAwake(); // Prevents screen from sleeping while timer is active
+
   const { target } = useLocalSearchParams();
-  const targetTime = Number(target);
-  const [remain, setRemain] = useState(targetTime);
+
+  const [remain, setRemain] = useState(Number(target));
   const [isDone, setIsDone] = useState(false);
   const [sound, setSound] = useState(null);
 

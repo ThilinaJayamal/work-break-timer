@@ -105,7 +105,7 @@ const Timer = () => {
           <AnimatedCircularProgress
             size={180}
             width={10}
-            fill={(remain / targetTime) * 100}
+            fill={(remain / Number(target)) * 100}
             tintColor="#00e0ff"
             backgroundColor="#3d5875"
           >
